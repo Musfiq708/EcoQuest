@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Rafiul Islam",
+    "image": "https://images.unsplash.com/photo-1690037901153-7fd75205941a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuZ2xhZGVzaGklMjBib3l8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500",
+    "location": "Bandarban,Chittagong",
+    "experience": "5 years",
+    "languages": ["Bangla", "English", "Chakma"],
+    "rating": 4.8,
+    "available": true,
+    "specialties": ["Mountain Trekking", "Local Culture Tours", "Eco-Trails"],
+    "contact": {
+      "phone": "+8801712345678",
+      "email": "rafiul.tours@gmail.com"
+    },
+    "about": "An experienced mountain guide specializing in eco-friendly treks around Bandarban and Nilgiri hills. Passionate about local culture and sustainable travel."
+  },
+  {
+    "id": 2,
+    "name": "Farhana Akter",
+    "image": "https://qph.cf2.quoracdn.net/main-qimg-8b355b7b4694996d47fbb007c0c6870a-lq",
+    "location": "Sundarbans, Khulna",
+    "experience": "7 years",
+    "languages": ["Bangla", "English", "Hindi"],
+    "rating": 4.9,
+    "available": true,
+    "specialties": ["Wildlife Safaris", "Mangrove Expeditions", "Boat Tours"],
+    "contact": {
+      "phone": "+8801912345678",
+      "email": "farhana.ecoguide@gmail.com"
+    },
+    "about": "Specializes in Sundarbans wildlife tours with deep knowledge of mangrove biodiversity and eco-safety practices."
+  },
+  {
+    "id": 3,
+    "name": "Shuvo Chowdhury",
+    "image": "https://www.bengalisofnewyork.com/wp-content/uploads/2021/11/3.jpg",
+    "location": "Sylhet",
+    "experience": "4 years",
+    "languages": ["Bangla", "English"],
+    "rating": 4.6,
+    "available": false,
+    "specialties": ["Swamp Forest Tours", "Tea Garden Walks", "Bird Watching"],
+    "contact": {
+      "phone": "+8801811223344",
+      "email": "shuvo.guide@gmail.com"
+    },
+    "about": "A friendly and knowledgeable guide from Sylhet who helps tourists explore Ratargul, Lalakhal, and surrounding tea estates responsibly."
+  },
+  {
+    "id": 4,
+    "name": "Nusrat Ahmed",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzU2MzIxNTktODk1ZS00MmIzLTk0ODItZmI0ODhlNWQzMjlmXkEyXkFqcGc@._V1_.jpg",
+    "location": "Cox’s Bazar",
+    "experience": "6 years",
+    "languages": ["Bangla", "English", "Arabic"],
+    "rating": 4.7,
+    "available": true,
+    "specialties": ["Beach Camping", "Scuba Diving Support", "Local Food Tours"],
+    "contact": {
+      "phone": "+8801555123456",
+      "email": "nusrat.ecoadventure@gmail.com"
+    },
+    "about": "Focused on coastal eco-tourism and sustainable beach activities. Experienced in managing group adventures and local seafood experiences."
+  }
+]

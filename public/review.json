@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Arif Hossain",
+    "packageName": "Sajek Valley Mountain Trek",
+    "date": "2025-06-12",
+    "duration": "3 Days",
+    "rating": 5,
+    "comment": "Amazing views and a respectful local guide. Totally eco-friendly experience."
+  },
+  {
+    "id": 2,
+    "name": "Fatima Noor",
+    "packageName": "Sundarbans Wildlife Safari",
+    "date": "2025-04-03",
+    "duration": "4 Days",
+    "rating": 4,
+    "comment": "Great wildlife spotting, comfortable boat, would love longer birdwatching time."
+  },
+  {
+    "id": 3,
+    "name": "Rashed Khan",
+    "packageName": "Cox’s Bazar Ocean Dive",
+    "date": "2025-09-01",
+    "duration": "2 Days",
+    "rating": 5,
+    "comment": "Excellent instructors and strict eco rules — felt very safe and responsible."
+  },
+  {
+    "id": 4,
+    "name": "Mst. Laila Begum",
+    "packageName": "Ratargul Swamp Forest Expedition",
+    "date": "2025-07-18",
+    "duration": "2 Days",
+    "rating": 4,
+    "comment": "Peaceful paddling and helpful guide. Bring insect repellent!"
+  },
+  {
+    "id": 5,
+    "name": "Tanvir Ahmed",
+    "packageName": "Saint Martin’s Island Camping Retreat",
+    "date": "2025-01-28",
+    "duration": "3 Days",
+    "rating": 5,
+    "comment": "Beautiful night sky and well-organized clean camps — loved the beach cleanup activity."
+  },
+  {
+    "id": 6,
+    "name": "Sadia Karim",
+    "packageName": "Nilgiri Hill Hike",
+    "date": "2024-12-05",
+    "duration": "2 Days",
+    "rating": 4,
+    "comment": "Challenging but rewarding. Local foods were delicious and sustainable."
+  },
+  {
+    "id": 7,
+    "name": "Imran Sheikh",
+    "packageName": "Lalakhal River Adventure",
+    "date": "2025-03-22",
+    "duration": "2 Days",
+    "rating": 4,
+    "comment": "Crystal waters were stunning. Guides enforced eco rules well."
+  },
+  {
+    "id": 8,
+    "name": "Nabila Chowdhury",
+    "packageName": "Lawachara Rainforest Trek",
+    "date": "2025-08-09",
+    "duration": "3 Days",
+    "rating": 5,
+    "comment": "Saw gibbons and many birds — the guide was super knowledgeable."
+  },
+  {
+    "id": 9,
+    "name": "Kamal Uddin",
+    "packageName": "Tanguar Haor Boating Experience",
+    "date": "2025-02-14",
+    "duration": "4 Days",
+    "rating": 5,
+    "comment": "Wonderful wetlands and friendly host community. Felt eco-conscious throughout."
+  },
+  {
+    "id": 10,
+    "name": "Rupa Sultana",
+    "packageName": "Kuakata Sea Beach Eco Retreat",
+    "date": "2025-05-30",
+    "duration": "5 Days",
+    "rating": 4,
+    "comment": "Relaxing retreat; enjoyed sunrise & sunset. Slight room improvements needed."
+  }
+]

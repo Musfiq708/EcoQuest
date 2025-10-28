@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer'
 
 export default function MainLayout() {
   return (
-    <div>
+    <div  className=''>
       <NavBar></NavBar>
       <Outlet></Outlet>
       <Footer></Footer>
