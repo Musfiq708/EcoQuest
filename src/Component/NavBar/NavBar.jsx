@@ -4,9 +4,9 @@ import logo from '../../assets/EcoQuest.jpg'
 export default function NavBar() {
     const links =
         <>
-            <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink>Item 1</NavLink></li>
+            <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink to="/all-adventure">All Adventure</NavLink></li>
             <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink>Item 2</NavLink></li>
-            <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink>Item 3</NavLink></li>
+            <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink >Item 3</NavLink></li>
 
         </>
     return (
@@ -35,7 +35,9 @@ export default function NavBar() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn text-[18px] hover:text-green-400 hover:bg-black ">LogIn</a>
+
+                    <NavLink className="btn text-[18px] hover:text-red-400 hover:bg-black mr-3" >LogOut</NavLink>
+                    <NavLink className="btn text-[18px] hover:text-green-400 hover:bg-black" to="/login">LogIn</NavLink>
                 </div>
             </div>
         </div>

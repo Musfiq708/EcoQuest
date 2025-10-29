@@ -3,7 +3,7 @@ import { FaStar, FaStarHalf } from 'react-icons/fa';
 
 
 export default function Reviews({ review }) {
-    console.log(review);
+   
     const { name, packageName, date, comment } = review;
     return (
         <div className="card bg-green-200 w-96 shadow-sm">
