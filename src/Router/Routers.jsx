@@ -1,14 +1,13 @@
-import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainLayout from '../Component/MainLayout/MainLayout'
 import Home from '../Component/Home/Home'
 import AllAdventures from '../Component/AllAdventures/AllAdventures'
 import Login from '../Component/Login/Login'
-import Register from './../Component/Register/Register';
+import Register from '../Component/Register/Register';
 
 
-
-export const router = createBrowserRouter([
+let router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
@@ -45,5 +44,8 @@ export const router = createBrowserRouter([
             }
         ]
     }
-])
+]);
+export default function Routers(){
+    return <RouterProvider router={router}></RouterProvider>
+}
             

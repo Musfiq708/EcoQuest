@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../../assets/EcoQuest.jpg'
+import { AuthContext } from '../AuthProfider/AuthProvider'
 export default function NavBar() {
+
+    const { logOut,user } = useContext(AuthContext)
+
+  if(user){
+    console.log(user.photoURL)
+  }
+
     const links =
         <>
             <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink to="/all-adventure">All Adventure</NavLink></li>
@@ -36,10 +44,13 @@ export default function NavBar() {
                 </div>
                 <div className="navbar-end">
 
-                    <NavLink className="btn text-[18px] hover:text-red-400 hover:bg-black mr-3" >LogOut</NavLink>
-                    <NavLink className="btn text-[18px] hover:text-green-400 hover:bg-black" to="/login">LogIn</NavLink>
+                    <NavLink onClick={logOut} className="btn text-[18px] hover:text-red-400 hover:bg-black mr-3" >LogOut</NavLink>
+                    {
+                        user?<button><img className='h-15 w-15 rounded-full ' src={user.photoURL} alt="" /></button>:<NavLink className="btn text-[18px] hover:text-green-400 hover:bg-black" to="/login">LogIn</NavLink>
+                    }
                 </div>
             </div>
         </div>
     )
 }
+
