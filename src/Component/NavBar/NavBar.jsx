@@ -4,16 +4,17 @@ import logo from '../../assets/EcoQuest.jpg'
 import { AuthContext } from '../AuthProfider/AuthProvider'
 export default function NavBar() {
 
-    const { logOut,user } = useContext(AuthContext)
+    const { logOut, user } = useContext(AuthContext)
 
-  if(user){
-    console.log(user.photoURL)
-  }
+    if (user) {
+        console.log(user.photoURL)
+    }
 
     const links =
         <>
-            <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink to="/all-adventure">All Adventure</NavLink></li>
-            <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink>Item 2</NavLink></li>
+            <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink to="/">Home</NavLink></li>
+            <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink to="/all-adventure">All Adventures</NavLink></li>
+
             <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink >Item 3</NavLink></li>
 
         </>
@@ -33,7 +34,7 @@ export default function NavBar() {
                         </ul>
                     </div>
                     <div className='flex items-center gap-4 '>
-                        <img src={logo} alt="" className='h-[50px] w-[50px] '/>
+                        <img src={logo} alt="" className='h-[50px] w-[50px] ' />
                         <a className=" text-3xl font-bold">EcoQuest</a>
                     </div>
                 </div>
@@ -46,7 +47,7 @@ export default function NavBar() {
 
                     <NavLink onClick={logOut} className="btn text-[18px] hover:text-red-400 hover:bg-black mr-3" >LogOut</NavLink>
                     {
-                        user?<button><img className='h-15 w-15 rounded-full ' src={user.photoURL} alt="" /></button>:<NavLink className="btn text-[18px] hover:text-green-400 hover:bg-black" to="/login">LogIn</NavLink>
+                        user ? <button><img className='h-15 w-15 rounded-full ' src={user.photoURL} alt="" /></button> : <NavLink className="btn text-[18px] hover:text-green-400 hover:bg-black" to="/login">LogIn</NavLink>
                     }
                 </div>
             </div>

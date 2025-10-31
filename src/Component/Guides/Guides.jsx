@@ -1,9 +1,10 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 export default function Guides({ guides }) {
-    
-    const { name, image, specialties ,about,rating} = guides;
+
+    const { name, image, specialties, about, rating,id } = guides;
     return (
         <div className="card  shadow-md border border-green-500">
             <div className="card-body">
@@ -17,13 +18,14 @@ export default function Guides({ guides }) {
                 </div>
                 <p>{about}</p>
                 <div className='flex items-center gap-2'>
-                <h1 className='text-base'><span className='font-bold'>Rating</span> : {rating} / 5 </h1>
-                <FaStar className='text-green-500' />
+                    <h1 className='text-base'><span className='font-bold'>Rating</span> : {rating} / 5 </h1>
+                    <FaStar className='text-green-500' />
                 </div>
-                <div className="card-actions font-bold text-green-700 hover:text-green-400">
+                <NavLink to={`/guides-details/${id}`} className=" card-actions font-bold text-green-700 hover:text-green-400 hover:underline">
                     Details information...
-                </div>
+                </NavLink>
             </div>
+            
         </div>
     )
 }

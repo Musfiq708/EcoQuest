@@ -1,8 +1,9 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 export default function Adventures({ adventure }) {
     
-    const {  image, adventureTitle, bookingAvailability,shortDescription,ecoFriendlyFeatures } = adventure;
+    const {  image, adventureTitle, bookingAvailability,shortDescription,ecoFriendlyFeatures,id } = adventure;
     
     return (
         <div className=' '>
@@ -28,8 +29,9 @@ export default function Adventures({ adventure }) {
                         }
                         
                     </div>
-                    <button className='btn bg-green-600 text-white mt-3 hover:bg-green-400'>Explore Now</button>
+                    <NavLink to ={`/adventure-details/${id}`}  className='btn bg-green-600 text-white mt-3 hover:bg-green-400'>Explore Now</NavLink>
                 </div>
+                
             </div>
         </div>
     )
