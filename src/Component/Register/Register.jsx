@@ -5,21 +5,30 @@ import { AuthContext } from "../AuthProfider/AuthProvider";
 
 export default function Register() {
 
-  const { userRegistration,manageProfile } = useContext(AuthContext);
+ const { userRegistration, manageProfile, logOut } = useContext(AuthContext);
 const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const name = e.target.name.value;
-    const photo = e.target.photo.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    console.log(name, photo, email, password)
-    userRegistration(email, password)
-    .then(res =>{
-      manageProfile(name,photo)
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const name = e.target.name.value;
+  const photo = e.target.photo.value;
+  const email = e.target.email.value;
+  const password = e.target.password.value;
+
+  userRegistration(email, password)
+    .then(() => {
+      return manageProfile(name, photo);
     })
-    navigate('/')
-  }
+    .then(() => {
+      return logOut();  // ✅ Logout after successful registration
+    })
+    .then(() => {
+      navigate('/login'); // ✅ Send user to login page
+    })
+    .catch(err => {
+      console.error(err);
+      alert(err.message);
+    });
+};
 
 
   return (

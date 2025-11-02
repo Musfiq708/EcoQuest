@@ -40,10 +40,12 @@ export default function MyProfile() {
                             <h1>{user.email}</h1>
                         </div>
                         <div>
-                            <div className='flex flex-col items-center gap-1 hover:text-green-500'>
-                                <FaEdit className='text-2xl' />
-                                <p>Edit Profile</p>
-                            </div>
+                            <NavLink to="/edit-profile">
+                                <div className='flex flex-col items-center gap-1 hover:text-green-500'>
+                                    <FaEdit className='text-2xl' />
+                                    <p>Edit Profile</p>
+                                </div>
+                            </NavLink>
                         </div>
                     </div>
                     <NavLink onClick={handleLogout} className="btn bg-green-300 text-[18px] hover:text-red-400 hover:bg-black mr-3">LogOut</NavLink>
