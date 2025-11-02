@@ -50,7 +50,7 @@ const navigate = useNavigate()
                         </ul>
                     </div>
                     <div className='flex items-center gap-4 '>
-                        <img src={logo} alt="" className='h-[50px] w-[50px] ' />
+                        <img src={logo} alt='' className='h-[50px] w-[50px] ' />
                         <a className=" text-3xl font-bold">EcoQuest</a>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const navigate = useNavigate()
 
 
                     {
-                        user ? <button><img className='h-15 w-15 rounded-full ' src={user.photoURL} alt="" /></button> : <NavLink className="btn text-[18px] hover:text-green-400 hover:bg-black" to="/login">LogIn</NavLink>
+                        user ? <button><img className='h-15 w-15 rounded-full ' src={user.photoURL} alt={user.displayName} /></button> : <NavLink className="btn text-[18px] hover:text-green-400 hover:bg-black" to="/login">LogIn</NavLink>
                     }
                 </div>
             </div>

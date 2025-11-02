@@ -1,35 +1,53 @@
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProfider/AuthProvider";
-
+import { toast } from "react-toastify";
 
 export default function Register() {
 
- const { userRegistration, manageProfile, logOut } = useContext(AuthContext);
-const navigate = useNavigate();
-const handleSubmit = (e) => {
-  e.preventDefault();
-  const name = e.target.name.value;
-  const photo = e.target.photo.value;
-  const email = e.target.email.value;
-  const password = e.target.password.value;
+  const { userRegistration, manageProfile, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  userRegistration(email, password)
-    .then(() => {
-      return manageProfile(name, photo);
-    })
-    .then(() => {
-      return logOut();  // ✅ Logout after successful registration
-    })
-    .then(() => {
-      navigate('/login'); // ✅ Send user to login page
-    })
-    .catch(err => {
-      console.error(err);
-      alert(err.message);
-    });
-};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters long");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password must contain at least one uppercase letter");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password must contain at least one lowercase letter");
+      return;
+    }
+
+    userRegistration(email, password)
+      .then(() => {
+        return manageProfile(name, photo);
+      })
+      .then(() => {
+        toast.success("Registration successful! Please login.", {
+          position: "top-center"
+        });
+        return logOut();
+      })
+      .then(() => {
+        setTimeout(() => navigate("/login"), 1500);
+      })
+      .catch(err => {
+        console.error(err);
+        toast.error(err.message || "Registration failed!", {
+          position: "top-center"
+        });
+      });
+  };
 
   return (
     <div>

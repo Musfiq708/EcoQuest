@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../AuthProfider/AuthProvider'
+import { Bounce, toast } from 'react-toastify';
 
 export default function Login() {
   const location = useLocation();
@@ -15,23 +16,36 @@ export default function Login() {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    logIn(email, password)
-      .then(res => {
+     logIn(email, password)
+      .then(() => {
+        toast.success("Login Successful", {
+          position: "top-center",
+          autoClose: 2000,
+          theme: "colored"
+        });
         navigate(target)
       })
       .catch(err => {
-        console.log(err)
-      })
+        toast.error(err.message, {
+          position: "top-center",
+          autoClose: 2500,
+          theme: "colored",
+          transition: Bounce,
+        });
+      });
   };
   const onclickGoogle = () => {
     handleGoogleLogin()
-      .then(res => {
+      .then(() => {
+        toast.success("Google Login Successful!", {
+          position: "top-center",
+          autoClose: 2000,
+          theme: "colored"
+        });
         navigate(target)
       })
-      .catch(err => {
-        console.log(err)
-      })
-  }
+      .catch(err => toast.error(err.message));
+  };
   console.log(email)
   return (
     <div>
@@ -43,10 +57,10 @@ export default function Login() {
           <div className="card-body">
             <fieldset className="fieldset">
               <label className="label">Email</label>
-              <input onChange={(e)=>setEmail(e.target.value)} name='email' type="email" className="input" placeholder="Email" />
+              <input onChange={(e) => setEmail(e.target.value)} name='email' type="email" className="input" placeholder="Email" />
               <label className="label">Password</label>
               <input name='password' type="password" className="input" placeholder="Password" />
-              <div><NavLink to="/forgetPass" state={{email}} className="link link-hover hover:text-green-500">Forgot password?</NavLink></div>
+              <div><NavLink to="/forgetPass" state={{ email }} className="link link-hover hover:text-green-500">Forgot password?</NavLink></div>
               <button className="btn btn-neutral mt-3  bg-green-600 text-white  hover:bg-green-400 border-none">Login</button>
             </fieldset>
             <h1 className='text-center mt-2 text-base font-bold'>Don't have an account..? <NavLink className="text-green-500 hover:text-green-700" to="/register">  Please Register</NavLink></h1>
