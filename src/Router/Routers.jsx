@@ -8,6 +8,9 @@ import Register from '../Component/Register/Register';
 import AdventureDetails from '../Component/AdventureDetails/AdventureDetails'
 import Guides from './../Component/Guides/Guides';
 import GuideInfo from '../Component/GuideInfo/GuideInfo'
+import PrivateRoute from '../Component/PrivateRoute/PrivateRoute'
+import MyProfile from '../Component/MyProfile/MyProfile'
+import EditProfile from '../Component/EditProfile/EditProfile'
 
 
 let router = createBrowserRouter([
@@ -47,7 +50,7 @@ let router = createBrowserRouter([
             },
             {
                 path: "/adventure-details/:id",
-                element: <AdventureDetails></AdventureDetails>,
+                element: <PrivateRoute><AdventureDetails></AdventureDetails></PrivateRoute>,
                 loader: async ({ params }) => {
                     const adventuresData = await fetch("/adventure.json");
                     const adventures = await adventuresData.json();
@@ -58,7 +61,7 @@ let router = createBrowserRouter([
             },
             {
                 path: "/guides-details/:id",
-                element: <GuideInfo></GuideInfo>,
+                element: <PrivateRoute><GuideInfo></GuideInfo></PrivateRoute>,
                 loader: async ({ params }) => {
                     const adventuresData = await fetch("/guides.json");
                     const adventures = await adventuresData.json();
@@ -66,6 +69,14 @@ let router = createBrowserRouter([
 
                     return singleData;
                 }
+            },
+            {
+                path:"/my-profile",
+                element:<MyProfile></MyProfile>
+            },
+            {
+                path:"/edit-profile",
+                element:<EditProfile></EditProfile>
             }
         ]
     }

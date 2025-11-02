@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
-import { useLoaderData } from 'react-router-dom';
+import { NavLink, useLoaderData } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Adventures from '../Adventures/Adventures';
 import Guides from '../Guides/Guides';
@@ -37,7 +37,7 @@ export default function Home() {
                         <Adventures key={adventure.id} adventure={adventure}></Adventures>
                     ))}
                 </div>
-                <button className='btn mx-auto block mt-7 bg-green-600 text-white  hover:bg-green-400'>More Packages</button>
+                <NavLink to="/all-adventure"><button className='btn mx-auto block mt-7 bg-green-600 text-white  hover:bg-green-400'>More Packages</button></NavLink>
                 <div>
                     <h1 className='text-center my-7 text-4xl font-extrabold'>
                         Meet Our <span className='text-green-500 hover:text-green-300'>Guides</span>

@@ -60,7 +60,7 @@ export default function AdventureDetails() {
             <td className="font-semibold p-2 bg-gray-100">Included Items</td>
             <td className="p-2 flex gap-2">
               {
-                includedItems.map(itms => <p className=" ">{itms}</p>)
+                includedItems.map((itms, index) => <p key={index} className=" ">{itms}</p>)
               }
             </td>
 
@@ -69,7 +69,7 @@ export default function AdventureDetails() {
             <td className="font-semibold p-2 bg-gray-100">Eco-Friendly Features</td>
             <td className="p-2 ">
               {
-                ecoFriendlyFeatures.map(itms => <p>{itms},</p>)
+                ecoFriendlyFeatures.map((itms, index) => <p key={index}>{itms},</p>)
               }
             </td>
 
@@ -82,7 +82,7 @@ export default function AdventureDetails() {
             <td className="font-semibold p-2 bg-gray-100">Special Instructions</td>
             <td className="p-2 ">
               {
-                specialInstructions.map(imt => <p>{imt}</p>)
+                specialInstructions.map((imt,index) => <p key={index}>{imt}</p>)
               }
             </td>
           </tr>

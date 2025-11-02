@@ -1,15 +1,36 @@
 import React, { useContext } from 'react'
 import { FcGoogle } from 'react-icons/fc'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../AuthProfider/AuthProvider'
 
 export default function Login() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const target = location?.state?.from || "/";
+  console.log(target);
+
   const { logIn, handleGoogleLogin } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    logIn(email, password);
+
+    logIn(email, password)
+      .then(res => {
+        navigate(target)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  };
+  const onclickGoogle = () => {
+    handleGoogleLogin()
+      .then(res => {
+        navigate(target)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
   return (
     <div>
@@ -33,7 +54,7 @@ export default function Login() {
       </form>
       <div className='mb-40 flex flex-col w-fit mx-auto items-center'>
         <h1 className='text-xl font-bold mt-3'>Or</h1>
-        <div onClick={handleGoogleLogin} className='flex items-center gap-2 p-3 border border-green-500 rounded-3xl mt-2 text-[18px] font-bold hover:bg-green-500 hover:text-white'>
+        <div onClick={onclickGoogle} className='flex items-center gap-2 p-3 border border-green-500 rounded-3xl mt-2 text-[18px] font-bold hover:bg-green-500 hover:text-white'>
           <FcGoogle className="text-3xl" />
           Google Login
         </div>

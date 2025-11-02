@@ -1,21 +1,37 @@
-import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../../assets/EcoQuest.jpg'
 import { AuthContext } from '../AuthProfider/AuthProvider'
 export default function NavBar() {
 
     const { logOut, user } = useContext(AuthContext)
 
-    if (user) {
-        console.log(user.photoURL)
+
+const navigate = useNavigate()
+
+    const handleLogout = () => {
+        logOut()
     }
+
+    useEffect(() => {
+        if (!user) {
+            navigate('/')
+        }
+    }, [user, navigate])
 
     const links =
         <>
             <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink to="/">Home</NavLink></li>
             <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink to="/all-adventure">All Adventures</NavLink></li>
 
-            <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink >Item 3</NavLink></li>
+            {
+                user ? <li className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'><NavLink to="/my-profile">My Profile</NavLink></li> : ""
+            }
+            {
+                user ? <li onClick={handleLogout} className='hover:bg-white hover:text-black hover:rounded hover:text-[16px] hover:font-bold'  ><NavLink >LogOut</NavLink></li> : ""
+            }
+            
+
 
         </>
     return (
@@ -45,12 +61,13 @@ export default function NavBar() {
                 </div>
                 <div className="navbar-end">
 
-                    <NavLink onClick={logOut} className="btn text-[18px] hover:text-red-400 hover:bg-black mr-3" >LogOut</NavLink>
+
                     {
                         user ? <button><img className='h-15 w-15 rounded-full ' src={user.photoURL} alt="" /></button> : <NavLink className="btn text-[18px] hover:text-green-400 hover:bg-black" to="/login">LogIn</NavLink>
                     }
                 </div>
             </div>
+
         </div>
     )
 }
