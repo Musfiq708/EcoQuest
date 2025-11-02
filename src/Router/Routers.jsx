@@ -12,6 +12,7 @@ import PrivateRoute from '../Component/PrivateRoute/PrivateRoute'
 import MyProfile from '../Component/MyProfile/MyProfile'
 import EditProfile from '../Component/EditProfile/EditProfile'
 import ForgetPassword from '../Component/ForgetPassword/ForgetPassword'
+import Error from '../Component/Error/Error'
 
 
 let router = createBrowserRouter([
@@ -82,6 +83,10 @@ let router = createBrowserRouter([
             {
                 path:"/forgetPass",
                 element:<ForgetPassword></ForgetPassword>
+            },
+            {
+                path:"*",
+                element:<Error></Error>
             }
         ]
     }

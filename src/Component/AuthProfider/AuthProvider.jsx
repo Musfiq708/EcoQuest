@@ -39,10 +39,11 @@ export default function AuthProvider({ children }) {
         signOut(auth);
     }
     const manageProfile = (name, photo) => {
-        updateProfile(auth.currentUser, {
-            displayName: name, photoURL: photo
-        })
-    }
+    return updateProfile(auth.currentUser, {
+        displayName: name,
+        photoURL: photo
+    });
+}
     const handleGoogleLogin = () => {
         return signInWithPopup(
             auth,

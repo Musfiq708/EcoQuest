@@ -1,25 +1,35 @@
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProfider/AuthProvider";
+import { toast } from "react-toastify";
+
 export default function EditProfile() {
     const { manageProfile, user } = useContext(AuthContext);
     const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
+
         const name2 = user.displayName;
         const photo2 = user.photoURL;
-        if (!photo) {
-            manageProfile(name, photo2)
-        }
-        if (!name) {
-            manageProfile(name2, photo)
-        }
 
-        navigate('/my-profile')
-    }
+        // ✅ Decide final values
+        const finalName = name ? name : name2;
+        const finalPhoto = photo ? photo : photo2;
 
+        manageProfile(finalName, finalPhoto)
+            .then(() => {
+                toast.success("Profile Updated Successfully!", {
+                    position: "top-center"
+                });
+                navigate('/my-profile');
+            })
+            .catch(err => {
+                toast.error(err.message, { position: "top-center" });
+            });
+    };
 
     return (
         <div className="lg:h-screen md:h-screen h-100 ">
@@ -39,7 +49,6 @@ export default function EditProfile() {
                     </div>
                 </div>
             </form>
-
         </div>
-    )
+    );
 }
