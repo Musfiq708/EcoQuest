@@ -53,7 +53,7 @@ export default function AuthProvider({ children }) {
     const resetPassword = (email) => {
         sendPasswordResetEmail(auth, email);
     }
-    console.log(user)
+    
     const authInfo = {
         user,
         userRegistration,
