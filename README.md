@@ -1,16 +1,28 @@
-# React + Vite
+# EcoQuest 🌿
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web for those who want to adventure . EcoQuest helps them select the perfact trip to enjoy . We have expert guides who will help you enjoy the best moments of your trip.
 
-Currently, two official plugins are available:
+## Live Link
+[EcoQuest Live](https://ecoquest-game.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Purpose
+To create an engaging educational platform that motivates users to adopt sustainable practices through gamification and community interaction.
 
-## React Compiler
+## Key Features
+- **Challenge System**: Daily and weekly eco-friendly tasks
+- **Progress Dashboard**: Visual tracking of environmental impact
+- **Resource Library**: Curated articles and videos on sustainability
+- **Achievement System**: Badges and rewards for completed actions
+- **Community Forum**: Share experiences and tips with other users
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technology 
+- **Frontend**: React.js, Tailwind CSS
+- **Authentication**: Firebase Auth
 
-## Expanding the ESLint configuration
+## NPM Packages
+- `react` - ^18.2.0
+- `tailwindcss` - ^3.3.3
+- `firebase` - ^10.1.0
+- `axios` - ^1.4.0
+- `react-router-dom` - ^6.14.2
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

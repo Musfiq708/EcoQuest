@@ -46,7 +46,7 @@ export default function Login() {
       })
       .catch(err => toast.error(err.message));
   };
-  console.log(email)
+ 
   return (
     <div>
       <h1 className='text-center mt-20 mb-5 text-4xl font-extrabold'>

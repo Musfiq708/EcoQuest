@@ -42,7 +42,7 @@ export default function Register() {
         setTimeout(() => navigate("/login"), 1500);
       })
       .catch(err => {
-        console.error(err);
+        
         toast.error(err.message || "Registration failed!", {
           position: "top-center"
         });

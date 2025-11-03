@@ -25,7 +25,7 @@ export default function ForgetPassword() {
 navigate("/")
     };
     
-console.log(target)
+
     return (
         <div className='h-screen'>
             <h1 className='text-center mt-20 mb-5 text-4xl font-extrabold'>
